@@ -68,6 +68,11 @@ string opt_starting_profile;
 string opt_starting_scene;
 string opt_starting_service_profile;
 
+// AMD PowerXpress High Performance Flags
+#ifdef _MSC_VER
+extern "C" __declspec(dllexport) int AmdPowerXpressRequestHighPerformance = 1;
+#endif
+
 QObject *CreateShortcutFilter()
 {
 	return new OBSEventFilter([](QObject *obj, QEvent *event)
